@@ -6,6 +6,8 @@ import { Toolbar } from '@mui/material';
 import { Typography } from '@mui/material';
 
 import LogoutIcon from '@mui/icons-material/Logout';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
+
 
 import { withCookies } from 'react-cookie';
 
@@ -24,8 +26,9 @@ const NavBar = (props) => {
     <AppBar position='static'>
     <Toolbar>
       <button className='logo'>
+        <LiveTvIcon />
       </button>
-      <TitleTypography variant='h5' >CSV_JIME</TitleTypography>
+      <TitleTypography variant='h5' >movie</TitleTypography>
       <button className='logout' onClick={()=>Logout()}>
         <LogoutIcon />
       </button>
