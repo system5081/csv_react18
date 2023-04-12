@@ -4,10 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {Route, BrowserRouter,Routes} from 'react-router-dom';
+import Login from './components/Login';
+import { CookiesProvider } from 'react-cookie';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <CookiesProvider>
+        <Routes>
+          <Route exact path='/' element={<Login />} />
+          <Route exact path='/movie' element={<App />} />
+        </Routes>
+      </CookiesProvider>
+    </BrowserRouter> 
   </React.StrictMode>
 );
 
