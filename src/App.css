@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Noto+Sans+JP:wght@100&display=swap');
 .App {
   text-align: center;
 }
@@ -35,4 +36,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.logo{
+  background-color:transparent;/* 背景色を透明色に */
+  color: lightgray;
+  margin-top: 7px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+}
+.logout{
+  background-color: transparent;
+  color: lightgray;
+  margin-top: 7px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }

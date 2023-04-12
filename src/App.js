@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+
+import { createTheme } from '@mui/material/styles';
+import { lightBlue } from '@mui/material/colors';
+import {red} from '@mui/material/colors';
+
+import { ThemeProvider } from '@mui/material/styles';
+import NavBar from './components/NavBar';
+
+const theme=createTheme({
+  palette :{
+    primary: lightBlue,
+    secondary: red,
+  },
+  typography:{
+    //App.css内でgooglefontから＠importしてCSS rules to specify familiesの記述をここに書く
+    fontFamily: "'M PLUS 1p', sans-serif",
+  },
+});
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+            <NavBar />
+    </ThemeProvider>
   );
 }
 
