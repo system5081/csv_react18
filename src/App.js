@@ -4,8 +4,11 @@ import { createTheme } from '@mui/material/styles';
 import { lightBlue } from '@mui/material/colors';
 import {red} from '@mui/material/colors';
 
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import NavBar from './components/NavBar';
+
+import ApiContextProvider from "./context/ApiContext";
+import Main from "./components/Main";
 
 const theme=createTheme({
   palette :{
@@ -21,9 +24,12 @@ const theme=createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-            <NavBar />
-    </ThemeProvider>
+    <ApiContextProvider>
+      <MuiThemeProvider theme={theme}>
+        <NavBar />
+        <Main />
+      </MuiThemeProvider>
+    </ApiContextProvider>
   );
 }
 
