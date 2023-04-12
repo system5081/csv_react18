@@ -10,7 +10,7 @@ import { Typography } from '@mui/material';
 import { TextField } from '@mui/material';
 import { IconButton } from '@mui/material';
 
-import AddIcon from '@mui/icons-material/Add';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
@@ -76,7 +76,7 @@ const Main = () => {
                 aria-label="add"
                 onClick={() => setModalIsOpen(true)}
               >
-                <AddIcon />
+                <AddCircleIcon />
               </Fab>
             </Grid>
 
