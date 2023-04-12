@@ -9,6 +9,10 @@ import { Fab } from '@mui/material';
 import { Typography } from '@mui/material';
 
 import DeleteIcon from '@mui/icons-material/Delete';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+
 
 const TitleTypography = styled(Typography)(({ theme }) => ({
   paddingLeft: theme.spacing(2),
@@ -32,7 +36,7 @@ const VideoDetail = () => {
   return (
     <div className="container">
       <button className="wait">
-        <IoLogoYoutube />
+        <PlayCircleIcon />
       </button>
     </div>
   );
@@ -67,13 +71,13 @@ const VideoDetail = () => {
 
         <Grid item xs={1}>
           <button className="like" onClick={() => incrementLike()}>
-            <AiFillLike />
+            <ThumbUpIcon />
             <Typography>{selectedVideo.like}</Typography>
           </button>
         </Grid>
         <Grid item xs={1}>
           <button className="like" onClick={() => incrementDislike()}>
-            <AiFillDislike />
+            <ThumbDownIcon />
             <Typography>{selectedVideo.dislike}</Typography>
           </button>
         </Grid>

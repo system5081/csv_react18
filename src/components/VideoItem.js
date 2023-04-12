@@ -18,7 +18,7 @@ const CardcontCardcontent= styled(CardContent)(({ theme }) => ({
     padding: theme.spacing(1),
 }));
 
-const VideoItem = () => {
+const VideoItem = ({video}) => {
 
     const { setSelectedVideo } = useContext(ApiContext);
 
