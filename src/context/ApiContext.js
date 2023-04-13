@@ -41,7 +41,7 @@ const ApiContextProvider = (props) => {
             uploadData,
             {
               headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "multipart/form-data",
                 Authorization: `JWT ${token}`,
               },
             }
