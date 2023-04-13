@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 import { ApiContext } from "../context/ApiContext";
 import Modal from "react-modal";
 
@@ -31,6 +31,37 @@ const TextAlignGrid = styled(Grid)(({ theme }) => ({
 
 const Main = () => {
 
+  useEffect(() => {
+    const videoInput = document.getElementById("mp4Input");
+    const imageInput = document.getElementById("imageInput");
+
+    if (videoInput) {
+      videoInput.addEventListener("change", (e) => {
+        console.log("Selected video file:", e.target.files[0]);
+      });
+    }
+
+    if (imageInput) {
+      imageInput.addEventListener("change", (e) => {
+        console.log("Selected thumbnail file:", e.target.files[0]);
+      });
+    }
+
+    return () => {
+      if (videoInput) {
+        videoInput.removeEventListener("change", (e) => {
+          console.log("Selected video file:", e.target.files[0]);
+        });
+      }
+
+      if (imageInput) {
+        imageInput.removeEventListener("change", (e) => {
+          console.log("Selected thumbnail file:", e.target.files[0]);
+        });
+      }
+    };
+  }, []);
+
     Modal.setAppElement("#root");
     const {
         title,
@@ -56,17 +87,11 @@ const Main = () => {
     const handleEditMovie = () => {
         const fileInput = document.getElementById("mp4Input");
         fileInput.click();
-        fileInput.addEventListener("change", (e) => {
-          console.log("Selected video file:", e.target.files[0]);
-        });
     };
 
     const handleEditPicture = () => {
         const fileInput = document.getElementById("imageInput");
         fileInput.click();
-        fileInput.addEventListener("change", (e) => {
-          console.log("Selected thumbnail file:", e.target.files[0]);
-        });
     };
 
   return (
