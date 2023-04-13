@@ -24,7 +24,7 @@ const ApiContextProvider = (props) => {
             });
             setVideos(res.data);
           } catch {
-            console.log("error");
+            console.log("errorgetVideo");
           }
         };
         getVideos();
@@ -52,7 +52,7 @@ const ApiContextProvider = (props) => {
           setVideo(null);
           setThum(null);
         } catch {
-          console.log("error");
+          console.log("errornewcideo");
             }   
     };
 
@@ -94,7 +94,7 @@ const ApiContextProvider = (props) => {
             videos.map((item) => (item.id === selectedVideo.id ? res.data : item))
           );
         } catch {
-          console.log("error");
+          console.log("errorincrementLike");
             }
     };
     
@@ -117,7 +117,7 @@ const ApiContextProvider = (props) => {
             videos.map((item) => (item.id === selectedVideo.id ? res.data : item))
           );
         } catch {
-          console.log("error");
+          console.log("errorincrementDisLike");
             }
     };
 
