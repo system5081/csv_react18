@@ -56,11 +56,17 @@ const Main = () => {
     const handleEditMovie = () => {
         const fileInput = document.getElementById("mp4Input");
         fileInput.click();
+        fileInput.addEventListener("change", (e) => {
+          console.log("Selected video file:", e.target.files[0]);
+        });
     };
 
     const handleEditPicture = () => {
         const fileInput = document.getElementById("imageInput");
         fileInput.click();
+        fileInput.addEventListener("change", (e) => {
+          console.log("Selected thumbnail file:", e.target.files[0]);
+        });
     };
 
   return (
