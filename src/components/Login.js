@@ -136,7 +136,7 @@ const Login = (props) => {
           try {
             dispatch({ type: START_FETCH });
             const res = await axios.post(
-              `http://movieapi.system5081.com/authen/jwt/create/`,
+              `https://movieapi.system5081.com/authen/jwt/create/`,
               state.credentialsLog,     //認証の情報はcredentialsLogに入っている
               {
                 headers: { "Content-Type": "application/json" },
@@ -154,7 +154,7 @@ const Login = (props) => {
           try {
             dispatch({ type: START_FETCH });
             await axios.post(
-              `http://movieapi.system5081.com/api/create/`,
+              `https://movieapi.system5081.com/api/create/`,
               state.credentialsLog,
               {
                 headers: { "Content-Type": "application/json" },
@@ -162,7 +162,7 @@ const Login = (props) => {
             );
     
             const res = await axios.post(
-              `http://movieapi.system5081.com/authen/jwt/create/`,
+              `https://movieapi.system5081.com/authen/jwt/create/`,
               state.credentialsLog,
               {
                 headers: { "Content-Type": "application/json" },
