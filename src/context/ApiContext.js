@@ -17,7 +17,7 @@ const ApiContextProvider = (props) => {
     useEffect(() => {
         const getVideos = async () => {
           try {
-            const res = await axios.get("http://movieapi.system5081.com/api/videos/", {
+            const res = await axios.get("https://movieapi.system5081.com/api/videos/", {
               headers: {
                 Authorization: `JWT ${token}`,
               },
@@ -37,7 +37,7 @@ const ApiContextProvider = (props) => {
         uploadData.append("thum", thum, thum.name);
         try {
           const res = await axios.post(
-            "http://movieapi.system5081.com/api/videos/",
+            "https://movieapi.system5081.com/api/videos/",
             uploadData,
             {
               headers: {
@@ -52,14 +52,14 @@ const ApiContextProvider = (props) => {
           setVideo(null);
           setThum(null);
         } catch {
-          console.log("errornewcideo");
+          console.log("errornewvideo");
             }   
     };
 
     const deleteVideo = async () => {
         try {
           await axios.delete(
-            `http://movieapi.system5081.com/api/videos/${selectedVideo.id}/`,
+            `https://movieapi.system5081.com/api/videos/${selectedVideo.id}/`,
             {
               headers: {
                 "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const ApiContextProvider = (props) => {
           setSelectedVideo(null);
           setVideos(videos.filter((item) => item.id !== selectedVideo.id));
         } catch {
-          console.log("error");
+          console.log("errordelete");
             }
     };
 
@@ -80,7 +80,7 @@ const ApiContextProvider = (props) => {
           uploadData.append("like", selectedVideo.like + 1);
     
           const res = await axios.patch(
-            `http://movieapi.system5081.com/api/videos/${selectedVideo.id}/`,
+            `https://movieapi.system5081.com/api/videos/${selectedVideo.id}/`,
             uploadData,
             {
               headers: {
@@ -103,7 +103,7 @@ const ApiContextProvider = (props) => {
           const uploadData = new FormData();
           uploadData.append("dislike", selectedVideo.dislike + 1);
           const res = await axios.patch(
-            `http://movieapi.system5081.com/api/videos/${selectedVideo.id}/`,
+            `https://movieapi.system5081.com/api/videos/${selectedVideo.id}/`,
             uploadData,
             {
               headers: {
